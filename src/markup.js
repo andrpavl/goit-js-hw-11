@@ -1,6 +1,5 @@
-export function makeMarkup(images) {
-    return images.map(image => {
-        const imgCard = 
+export function makeMarkup(data) {
+    const markup = data.map(image => {
         `<div class="photo-card">
         <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         <div class="info">
@@ -18,6 +17,6 @@ export function makeMarkup(images) {
           </p>
         </div>
       </div>`
-      gallery.insertAdjacentHTML('beforeend', imgCard)
+      
     }).join('');
 }
