@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import axios from "axios";
+import { makeMarkup } from './markup';
 
 const BASE_URL = 'https://pixabay.com/api/';
 const KEY_API = '35752200-55fbc3ad9b98a84c3d01ddaf0';
@@ -28,29 +29,7 @@ async function onImagesSearch(evt) {
         }
 }}
 
-function makeMarkup(data) {
-    const markup = data.map(image => {
-       return `<div class="photo-card">
-        <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-        <div class="info">
-          <p class="info-item">
-            <b>${image.likes}</b>
-          </p>
-          <p class="info-item">
-            <b>${image.views}</b>
-          </p>
-          <p class="info-item">
-            <b>${image.comments}</b>
-          </p>
-          <p class="info-item">
-            <b>${image.downloads}</b>
-          </p>
-        </div>
-      </div>`
-      
-    }).join('');
-    return markup;
-}
+
 
 export async function fetchImg(query, page) {
     try {
