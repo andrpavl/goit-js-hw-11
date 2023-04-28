@@ -1,19 +1,19 @@
  export function makeMarkup(data) {
   const markup = data.map(image => {
      return `<div class="photo-card">
-      <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+      <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" class="search-image"/>
       <div class="info">
         <p class="info-item">
-          <b>${image.likes}</b>
+          <b>Likes</b>${image.likes}
         </p>
         <p class="info-item">
-          <b>${image.views}</b>
+          <b>Views</b>${image.views}
         </p>
         <p class="info-item">
-          <b>${image.comments}</b>
+          <b>Comments</b>${image.comments}
         </p>
         <p class="info-item">
-          <b>${image.downloads}</b>
+          <b>Downloads</b>${image.downloads}
         </p>
       </div>
     </div>`

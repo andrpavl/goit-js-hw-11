@@ -1,0 +1,27 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-item {
+    display: grid;
+}
+
+.photo-card {
+    max-width: 450px;
+}
+
+.search-image {
+    height: 300px;
+    width: 100%;
+}
+
+.photo-card:not(:last-child) {
+    margin-right: 10px;
+}
