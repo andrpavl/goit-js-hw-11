@@ -1,0 +1,61 @@
+body {
+  background-image: url("https://top-fon.com/uploads/posts/2022-09/1663547839_41-top-fon-com-p-fon-dlya-plakata-serii-foto-55.jpg");
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 30px;
+}
+
+.search-form input {
+  margin-right: 30px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-card {
+  width: 430px;
+  border: gray 2px solid;
+  border-radius: 10px;
+  background-color: beige;
+}
+
+.search-image {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.photo-card:not(:last-child) {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  box-shadow: 0 5px 15px 0 rgb(200, 214, 238);
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: translate(0, -3px);
+  box-shadow: 0 20px 40px 0 rgb(11, 99, 246);
+}/*# sourceMappingURL=styles.css.map */
