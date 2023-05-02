@@ -2,6 +2,10 @@ body {
     background-image: url('https://top-fon.com/uploads/posts/2022-09/1663547839_41-top-fon-com-p-fon-dlya-plakata-serii-foto-55.jpg');
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 .search-form {
     display: flex;
     justify-content: center;
@@ -11,7 +15,14 @@ body {
 }
 .search-form input {
     margin-right: 30px;
+    border-radius: 5px;
+    background-color: aquamarine;
+
+    font-size: 30px;
+    padding: 20px;
+
 }
+
 .gallery { 
     display: flex;
     justify-content: center;
@@ -53,6 +64,12 @@ body {
 button {
     box-shadow: 0 5px 15px 0 rgb(200, 214, 238);
     transition: 0.5s;
+
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    font-weight: 800;
 }
   
 button:hover {

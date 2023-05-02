@@ -11,7 +11,7 @@ const perPage = 40;
 let currentPage = 1;
 let options = {
     root: null,
-    rootMargin: "300px",
+    rootMargin: "400px",
     threshold: 1.0,
 };
 
@@ -29,12 +29,11 @@ export function onImagesSearch(evt) {
             .then(data => {
               gallery.insertAdjacentHTML('beforeend', makeMarkup(data));
               lightbox.refresh();
-              if (
-                data.totalHits < perPage ||
-                currentPage === Math.round(data.totalHits / perPage)
-              ) {
+              if (data.totalHits < perPage ||
+                currentPage === Math.round(data.totalHits / perPage)) {
                 currentPage = 1;
                 observer.unobserve(target);
+                Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
               }
             })
             .catch(error => console.log(error));
@@ -47,6 +46,9 @@ export function onImagesSearch(evt) {
         if(data.hits.length) {
             Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
             gallery.insertAdjacentHTML('beforeend', makeMarkup(data));
+            if (data.totalHits > perPage) {
+                observer.observe(target);
+              };
             lightbox.refresh();
         } else {
             Notiflix.Notify.failure(
@@ -58,3 +60,4 @@ export function onImagesSearch(evt) {
        console.log(error)
       );
 }
+
