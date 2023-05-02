@@ -15,7 +15,7 @@ let options = {
     threshold: 1.0,
 };
 
-export function onImagesSearch(evt) {
+export async function onImagesSearch(evt) {
     evt.preventDefault();
     gallery.innerHTML = ""
     const { searchQuery } = evt.currentTarget.elements;
@@ -41,7 +41,7 @@ export function onImagesSearch(evt) {
       });
     }
 
-    fetchImg(searchQuery.value)
+    await fetchImg(searchQuery.value)
     .then(data => {
         if(data.hits.length) {
             Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
