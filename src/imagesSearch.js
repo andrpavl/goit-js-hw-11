@@ -27,7 +27,7 @@ export function onImagesSearch(evt) {
           currentPage += 1;
           fetchImg(searchQuery.value, currentPage)
             .then(data => {
-              gallery.insertAdjacentHTML('beforeend', makeMarkup(data));
+              gallery.insertAdjacentHTML('beforeend', makeMarkup(data.hits));
               lightbox.refresh();
               if (data.totalHits < perPage ||
                 currentPage === Math.round(data.totalHits / perPage)) {
@@ -45,7 +45,7 @@ export function onImagesSearch(evt) {
     .then(data => {
         if(data.hits.length) {
             Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
-            gallery.insertAdjacentHTML('beforeend', makeMarkup(data));
+            gallery.insertAdjacentHTML('beforeend', makeMarkup(data.hits));
             if (data.totalHits > perPage) {
                 observer.observe(target);
               };

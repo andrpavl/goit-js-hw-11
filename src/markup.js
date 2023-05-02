@@ -1,5 +1,5 @@
  export function makeMarkup(object) {
-  return object.hits.map(({
+  return object.map(({
     webformatURL,
     largeImageURL,
     tags,
